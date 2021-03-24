@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        let obj={
+                unit:0,
+                ten:0,
+                hundred:0
+            }
+
+        function numbUse(numb) {
+            numb=prompt();
+            numb=Math.floor(numb);
+            if(numb>=100 && numb<=999){
+                obj.hundred=Math.floor(numb/100);
+                obj.unit=numb%10;
+                obj.ten=((numb-(obj.hundred*100))-obj.unit)/10;
+                console.log(obj);
+            }else if(numb<100 && numb>=10){
+                obj.unit=numb%10;
+                obj.ten=Math.floor(numb/10);
+                console.log(obj);
+            }else if(numb<10 && numb>0){
+                obj.unit=numb;
+                console.log(obj);
+            }else if(numb<=0 | numb>999 | !parseInt(numb)){
+                console.log("Введите число,удовлетворяющее условию: 0<=numb<=999")
+                console.log(obj);
+            }
+            
+        }
+        numbUse();
+    </script>
+</body>
+</html>
